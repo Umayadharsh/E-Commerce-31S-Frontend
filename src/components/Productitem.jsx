@@ -36,7 +36,7 @@ const Productitem = ({ id, name, price, image, bestseller }) => {
         <img
           src={hovered && image ? image : image}
           alt={name}
-          className="w-full h-[420px] object-cover transition duration-300"
+          className="w-full object-fit transition duration-300"
         />
 
         {/* QUICK ADD */}
