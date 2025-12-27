@@ -10,34 +10,28 @@ const ForgotPassword = () => {
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setMessage("");
+  e.preventDefault();
+  setLoading(true);
+  setMessage("");
 
-    try {
-      const res = await axios.post(
-        `${backendUrl}/api/user/forgot-password`,
-        { email }
-      );
+  try {
+    const res = await axios.post(
+      `${backendUrl}/api/user/forgot-password`,
+      { email }
+    );
 
-      if (res.data.success) {
-        setMessage("Password reset link sent. Check your email.");
-
-        // ⚠️ TEMP (for development only)
-        console.log("RESET TOKEN:", res.data.resetToken);
-
-        setTimeout(() => {
-          navigate("/login");
-        }, 2000);
-      } else {
-        setMessage(res.data.message || "User not found");
-      }
-    } catch (error) {
-      setMessage("Something went wrong. Try again.");
-    } finally {
-      setLoading(false);
+    if (res.data.success) {
+      setMessage("Password reset link sent. Check your email.");
+      setEmail("");
+    } else {
+      setMessage(res.data.message || "User not found");
     }
-  };
+  } catch (error) {
+    setMessage("Something went wrong. Try again.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
