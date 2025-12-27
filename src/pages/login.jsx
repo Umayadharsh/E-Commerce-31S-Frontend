@@ -68,7 +68,7 @@ const Login = () => {
           </button>
         </form>
 
-        <span className="text-gray-500 mt-5 curser-pointer"  onClick={() => navigate("/forgot")}>Forgot password?</span>
+       {/* <span className="text-gray-500 mt-5 curser-pointer"  onClick={() => navigate("/forgot")}>Forgot password?</span>*/}
 
         <p className="text-xs text-gray-500 mt-6 text-center">
           Don’t have an account?{" "}
