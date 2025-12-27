@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (max-width: 640px){
+   a.active{
+    background-color: black;
+    color: beige;
+   }
+
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: black;
+}
+
+.payment-btn {
+  flex: 1;
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.payment-btn.active {
+  border-color: black;
+  background: black;
+  color: white;
+}
